@@ -1,0 +1,5 @@
+import(stats4)
+import(methods, grid)
+export(seqLogo, makePWM)
+exportClasses("pwm")
+exportMethods("plot", "summary", "show")
