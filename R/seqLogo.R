@@ -19,7 +19,7 @@ letterA <- function(x.pos,y.pos,ht,wt,id=NULL){
     id <- c(rep(id,9),rep(id+1,4))
   }
     
-  fill <- c("green","white")
+  fill <- c("#E41A1C","white")
     
   list(x=x,y=y,id=id,fill=fill)
 }
@@ -41,7 +41,7 @@ letterT <- function(x.pos,y.pos,ht,wt,id=NULL){
     id <- rep(id,8)
   }
   
-  fill <- "red"
+  fill <- "#4DAF4A"
     
   list(x=x,y=y,id=id,fill=fill)
 }
@@ -88,7 +88,7 @@ letterC <- function(x.pos,y.pos,ht,wt,id=NULL){
     id <- rep(id,length(x))
   }
   
-  fill <- "blue"
+  fill <- "#F0E442"
     
   list(x=x,y=y,id=id,fill=fill)
 }
@@ -149,7 +149,7 @@ letterG <- function(x.pos,y.pos,ht,wt,id=NULL){
   y <- y.pos + ht*y
   
   
-  fill <- c("orange","orange")
+  fill <- c("#377EB8","#377EB8")
     
   list(x=x,y=y,id=id,fill=fill)
 
