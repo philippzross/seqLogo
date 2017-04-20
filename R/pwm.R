@@ -28,12 +28,12 @@ makePWM <- function(pwm, alphabet="DNA"){
 
 
 ## get information content profile from PWM
-pwm2ic<-function(pwm) {
+pwm2ic<-function(pwm,letters=("A","C","G","T"),freqs=c(0.25,0.25,0.25,0.25)) {
     npos<-ncol(pwm)
     ic<-numeric(length=npos)
     for (i in 1:npos) {
-        ic[i]<-2 + sum(sapply(pwm[, i], function(x) { 
-            if (x > 0) { x*log2(x) } else { 0 }
+        ic[i] <- 2 + sum(sapply(pwm[, i], function(x) { 
+            if (x > 0) { x*log2(x/freqs[i]) } else { 0 }
         }))
     }    
     ic
