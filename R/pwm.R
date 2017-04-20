@@ -28,7 +28,7 @@ makePWM <- function(pwm, alphabet="DNA"){
 
 
 ## get information content profile from PWM
-pwm2ic<-function(pwm,letters=("A","C","G","T"),freqs=c(0.25,0.25,0.25,0.25)) {
+pwm2ic<-function(pwm,order=c("A","C","G","T"),freqs=c(0.25,0.25,0.25,0.25)) {
     npos<-ncol(pwm)
     ic<-numeric(length=npos)
     for (i in 1:npos) {
