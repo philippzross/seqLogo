@@ -182,7 +182,7 @@ addLetter <- function(letters,which,x.pos,y.pos,ht,wt){
 
 
 ## plot a sequence logo
-seqLogo <- function(pwm, ic.scale=TRUE, xaxis=TRUE, yaxis=TRUE, xfontsize=15, yfontsize=15){
+seqLogo <- function(pwm, ic.scale=TRUE, xaxis=TRUE, yaxis=TRUE, xfontsize=15, yfontsize=15, order=c("A","C","G","T"),freqs=c(0.25,0.25,0.25,0.25)){
 
   if (class(pwm) == "pwm"){
     pwm <- pwm@pwm    
@@ -204,7 +204,7 @@ seqLogo <- function(pwm, ic.scale=TRUE, xaxis=TRUE, yaxis=TRUE, xfontsize=15, yf
   if (ic.scale){
     ylim <- 2
     ylab <- "Information content"
-    facs <- pwm2ic(pwm)
+    facs <- pwm2ic(pwm,order,freqs)
   }else{
     ylim <- 1
     ylab <- "Probability"
@@ -251,7 +251,7 @@ seqLogo <- function(pwm, ic.scale=TRUE, xaxis=TRUE, yaxis=TRUE, xfontsize=15, yf
 }
 
 ## plot a complementary sequence logo
-seqLogoRev <- function(pwm, ic.scale=TRUE, xaxis=TRUE, yaxis=TRUE, xfontsize=15, yfontsize=15){
+seqLogoRev <- function(pwm, ic.scale=TRUE, xaxis=TRUE, yaxis=TRUE, xfontsize=15, yfontsize=15, order=c("A","C","G","T"),freqs=c(0.25,0.25,0.25,0.25)){
 
   if (class(pwm) == "pwm"){
     pwm <- pwm@pwm    
@@ -273,7 +273,7 @@ seqLogoRev <- function(pwm, ic.scale=TRUE, xaxis=TRUE, yaxis=TRUE, xfontsize=15,
   if (ic.scale){
     ylim <- 2
     ylab <- "Information content"
-    facs <- pwm2ic(pwm)
+    facs <- pwm2ic(pwm,order,freqs)
   }else{
     ylim <- 1
     ylab <- "Probability"
