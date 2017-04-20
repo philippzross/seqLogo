@@ -1,4 +1,4 @@
-makePWM <- function(pwm, alphabet="DNA"){
+makePWM <- function(pwm, alphabet="DNA", order=c("A","C","G","T"), freqs=c(0.25,0.25,0.25,0.25)){
 
   if (is.data.frame(pwm)) pwm <- as.matrix(pwm)
   if (!is.matrix(pwm)) stop("pwm must be a matrix or a dataframe")
@@ -20,7 +20,7 @@ makePWM <- function(pwm, alphabet="DNA"){
   rownames(pwm) <- c("A","C","G","T")
 
   cons <- pwm2cons(pwm)
-  ic <- pwm2ic(pwm)
+  ic <- pwm2ic(pwm,order=c("A","C","G","T"),freqs=c(0.25,0.25,0.25,0.25))
   
   new("pwm", pwm=pwm, consensus=cons, ic=ic, width=width, alphabet=alphabet)
 }
